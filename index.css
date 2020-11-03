@@ -150,7 +150,7 @@ img {
     height: 100vh;
     z-index: 20;
     color: var(--main-light);
-    background-image: url("./bgIMG.JPG");
+    /*background-image: url("./bgIMG.JPG");*/
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -223,7 +223,7 @@ img {
 }
 
 .project-tile p {
-    background-image: url("./bgIMG.JPG");
+    /*background-image: url("./bgIMG.JPG");*/
     color: var(--main-light);
 }
 
