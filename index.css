@@ -1,0 +1,272 @@
+:root {
+    --main-gold: #AD974F;
+    --dark-gold: #8E793E;
+    --main-light: #EAEAEA;
+    --main-gray: ;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* border-box */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    /* 默认字号为16px, 将html根元素字号设置为 10px */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+/* breakpoints */
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+    html {
+        font-size: 60%;
+    }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+    html {
+        font-size: 58%;
+    }
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+    html {
+        font-size: 55%;
+    }
+}
+
+/* Base styles */
+
+body {
+    font-family: sans-serif;
+    font-size: 1.8rem; /* 18px */
+    font-weight: 400;
+    line-height: 1.4;
+    background-image: url("./bgIMG.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 24rem;
+    height: 32rem;
+}
+
+/* nav */
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.nav-sm {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.nav-list {
+    display: flex;
+    margin-right: 2rem; /* 20px */
+    align-items: center;
+}
+
+.nav-list a {
+    display: block;
+    color: var(--main-gold);
+    font-size: 1.4rem;
+    padding: 1.5rem;
+    transition: transform 0.3s ease-out;
+}
+
+.nav-list a:hover {
+    color: var(--dark-gold);
+    transform: translateY(5px);
+}
+
+@media (max-width: 28.75em) {
+    .nav {
+        display: none;
+    }
+    
+    .nav-sm {
+        display: flex;
+    }
+    
+    .nav-list {
+        margin: 0 5rem;
+    }
+    
+    .nav-list a {
+        padding: 1.5rem  4rem;
+    }
+}
+
+/* welcome section */
+
+.welcome-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 20;
+    color: var(--main-light);
+    background-image: url("./bgIMG.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.welcome-section p {
+    font-size: 3rem;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* pointer section */
+
+.pointer {
+    color: white;
+    font-weight: 400;
+    position: absolute;
+    display: block;
+    height: 3rem;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.pointer i {
+    position: absolute;
+    animation: myMove 2s infinite;
+    -webkit-animation: myMove 2s infinite;
+}
+
+@keyframes myMove
+{
+    0% {bottom:3rem;}
+    100% {bottom: 0;}
+}
+
+@-webkit-keyframes myMove
+{
+    0% {bottom:3rem;}
+    100% {bottom: 0;}
+}
+
+.pointer:hover {
+    color: var(--dark-gold);
+}
+
+
+/* projects section */
+
+.projects-section {
+    width: 100%;
+    height: 100vh;
+    align-content: center;
+    background: var(--main-light);
+    z-index: 5;
+    text-align: center;
+}
+
+.projects-container {
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.project-tile {
+    width: ;
+    border: 1px var(--main-gray);
+    border-radius: 2px;
+}
+
+.project-tile p {
+    background-image: url("./bgIMG.JPG");
+    color: var(--main-light);
+}
+
+.btn-tile {
+    display: block;
+    text-decoration: none;
+    background: ;
+    color: var(--main-light);
+}
+
+/* Contact section */
+
+.contact-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: 5;
+    height: 100vh;
+}
+
+.contact-img {
+    margin-bottom: 5rem;
+}
+
+.contact-links {
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contact-details {
+    margin: 0 2rem; /* 20px */
+    display: block;
+    color: var(--main-gold);
+    transition: transform 0.3s ease-out;
+}
+
+
+.contact-details:hover {
+    color: var(--dark-gold);
+    transform: translateY(5px);
+}
