@@ -1,7 +1,10 @@
+<!DOCTYPE>
 <html lang="en">
 	<head>
 		<title>Mei Jie</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+		<meta name="viewport"
+					content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+		>
 		<link rel="stylesheet" href="./index.css"/>
 		<link rel="stylesheet" href="//at.alicdn.com/t/font_2091500_jl22fhgjtv.css"/>
 	</head>
@@ -28,7 +31,7 @@
 			<a target="_blank" href="https://leetcode-cn.com/u/meijie/"><i class="iconfont icon-leetcode"></i></a>
 		</li>
 		<li>
-			<a  href="#" onclick="window.open('//asset.ibanquan.com/image/5fa19092ba3e6a00258b6bfe/s.jpeg?v=1604423826','popup','scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><i class="iconfont icon-wechat"></i></a>
+			<span onclick="showModal(true)"><i class="iconfont icon-wechat"></i></span>
 		</li>
 	</ul>
 </nav>
@@ -46,22 +49,29 @@
 			<div class="projects-container">
 				<div class="project-tile">
 					<a href="#" target="_blank">
-						<img src="#" alt="project-img"/>
+						<img src="./cover.png" alt="project-img"/>
 						<p>原子哥电子技术教育平台<i class="iconfont icon-right_up"></i></p>
 					</a>
 				</div>
 				
 				<div class="project-tile">
 					<a href="#" target="_blank">
-						<img src="#" alt="project-img"/>
-						<p>JWANDERSON预约管理系统<i class="iconfont icon-right_up"></i></p>
+						<img src="./cover.png" alt="project-img"/>
+						<p>JWANDERSON Reservation<i class="iconfont icon-right_up"></i></p>
 					</a>
 				</div>
 				
 				<div class="project-tile">
 					<a href="#" target="_blank">
-						<img src="#" alt="project-img"/>
+						<img src="./cover.png" alt="project-img"/>
 						<p>外卖小程序<i class="iconfont icon-right_up"></i></p>
+					</a>
+				</div>
+				
+				<div class="project-tile">
+					<a href="snake/snake.html" target="_blank">
+						<img src="./cover.png" alt="project-img"/>
+						<p>Snake<i class="iconfont icon-right_up"></i></p>
 					</a>
 				</div>
 			</div>
@@ -70,19 +80,17 @@
 		<section id="contact" class="contact-section">
 			<img src="//asset.ibanquan.com/image/5fa1908d607af0002652cc69/s.jpeg?v=1604423821" alt="avatar" class="contact-img">
 			<div class="contact-links">
+				<a class="contact-details" target="_blank" href="./blog.html">Blog</a>
 				<a class="contact-details" target="_blank" href="https://leetcode-cn.com/u/meijie/">LeetCode</a>
-				<a class="contact-details" target="_blank" href="www.meiworks.cn">Blog</a>
-				<span class="contact-details" onclick="showModal(true)">
-					WeChat
-				</span>
+				<span class="contact-details" onclick="showModal(true)">WeChat</span>
 				<a href="mailto:draltracy@msn.cn" class="contact-details">Email</a>
 			</div>
 		</section>
 <!--	蒙板  -->
 	<div id="modal">
 		<div class="modal-content">
+			<img src="./qrcode.JPG" alt="wechat-qrcode">
 			<button id="closeModal" onclick="showModal(false)"><i class="iconfont icon-close"></i></button>
-			<img src="qrcode.JPG" alt="wechat-qrcode">
 		</div>
 	</div>
 	</body>

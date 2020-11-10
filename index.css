@@ -1,51 +1,5 @@
-:root {
-    --main-gold: #AD974F;
-    --dark-gold: #8E793E;
-    --main-light: #EAEAEA;
-    /*--main-gray: ;*/
-}
+@import "reset.css";
 
-/* reset */
-* {
-    margin: 0;
-    padding: 0;
-}
-
-/* border-box */
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
-html {
-    box-sizing: border-box;
-    /* 默认字号为16px, 将html根元素字号设置为 10px */
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-}
-
-/* breakpoints */
-/* 1200px / 16px = 75em */
-@media (max-width: 75em) {
-    html {
-        font-size: 60%;
-    }
-}
-
-/* 980px / 16px = 61.25em */
-@media (max-width: 61.25em) {
-    html {
-        font-size: 58%;
-    }
-}
-
-/* 460px / 16px = 28.75em */
-@media (max-width: 28.75em) {
-    html {
-        font-size: 55%;
-    }
-}
 
 /* Base styles */
 
@@ -54,6 +8,8 @@ body {
     font-size: 1.8rem; /* 18px */
     font-weight: 400;
     line-height: 1.4;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
     background-image: url("//asset.ibanquan.com/image/5fa19090607af0002652cc6c/s.jpeg?v=1604423825");
     background-repeat: no-repeat;
     background-size: cover;
@@ -107,7 +63,7 @@ img {
     align-items: center;
 }
 
-.nav-list a {
+.nav-list a, .nav-list span {
     display: block;
     color: var(--main-gold);
     font-size: 1.4rem;
@@ -115,7 +71,7 @@ img {
     transition: transform 0.3s ease-out;
 }
 
-.nav-list a:hover {
+.nav-list a:hover, .nav-list span:hover {
     color: var(--dark-gold);
     transform: translateY(5px);
 }
@@ -148,8 +104,6 @@ img {
     align-items: center;
     width: 100%;
     height: 100vh;
-    padding-bottom: constant(safe-area-inset-bottom);
-    padding-bottom: env(safe-area-inset-bottom);
     z-index: 20;
     color: var(--main-light);
     background-image: url("//asset.ibanquan.com/image/5fa19090607af0002652cc6c/s.jpeg?v=1604423825");
@@ -167,6 +121,7 @@ img {
 
 .pointer {
     color: white;
+    font-size: 1.8rem;
     font-weight: 400;
     position: absolute;
     display: block;
@@ -178,8 +133,8 @@ img {
 
 .pointer i {
     position: absolute;
-    animation: myMove 2s infinite;
-    -webkit-animation: myMove 2s infinite;
+    animation: myMove 1s infinite;
+    -webkit-animation: myMove 1s infinite;
 }
 
 @keyframes myMove
@@ -226,7 +181,7 @@ img {
 
 .project-tile p {
     /*background-image: url("./bgIMG.JPG");*/
-    color: var(--main-light);
+    color: var(--main-gold);
 }
 
 .btn-tile {
@@ -254,7 +209,7 @@ img {
 }
 
 .contact-links {
-    height: 5rem;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -280,25 +235,28 @@ img {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 5rem;
     display: none;
     background-color: rgba(9,9,9,0.63);
     width: 100%;
     height: 100%;
     z-index: 1000;
     align-items: center;
+    text-align: center;
     overflow: hidden;
 }
 
 .modal-content {
     width: 75%;
+    max-width: 700px;
+    min-height: 400px;
     height: 50vh;
+    margin: 0 auto;
     display: flex;
-    text-align: center;
-    align-content: center;
-    background: var(--main-light);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
     border-radius: 5px;
-    margin-top: -25vh;
     z-index: 100001;
 }
 
@@ -308,10 +266,15 @@ img {
 
 #closeModal {
     color: var(--main-gold);
-    display: block;
+    display: inline-block;
     padding: 2rem;
-    text-align: right;
     text-decoration: none;
     border: none;
-    font-size: 1.8rem;
+    text-align: right;
+    font-size: 5rem;
+    font-weight: 400;
+    background-color: white;
+}
+#closeModal:hover {
+    cursor: pointer;
 }
