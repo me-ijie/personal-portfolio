@@ -150,7 +150,7 @@ img {
     height: 100vh;
     z-index: 20;
     color: var(--main-light);
-    /*background-image: url("./bgIMG.JPG");*/
+    background-image: url("//asset.ibanquan.com/image/5fa19090607af0002652cc6c/s.jpeg?v=1604423825");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -218,7 +218,7 @@ img {
 
 .project-tile {
     width: 200px;
-    border: 1px var(--main-gray);
+    border: 1px var(--main-light);
     border-radius: 2px;
 }
 
@@ -268,5 +268,36 @@ img {
 
 .contact-details:hover {
     color: var(--dark-gold);
+    cursor: pointer;
     transform: translateY(5px);
+}
+
+/* Modal */
+
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    background-color: rgba(9,9,9,0.63);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    align-content: center;
+    overflow: hidden;
+}
+
+.modal-content {
+    width: 50%;
+    text-align: center;
+    align-content: center;
+    background: rgb(25,25,25);
+    border-radius: 5px;
+    margin: 100px auto;
+    z-index: 100001;
+}
+
+#closeModal {
+    color: var(--main-gold);
+    float: right;
 }
