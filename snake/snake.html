@@ -12,7 +12,6 @@
         }
         body {
             overflow: hidden;
-
         }
         .container {
             width: 100%;
@@ -23,15 +22,31 @@
             align-items: center;
         }
         
+        .container h1,h3,canvas,p {
+            padding-bottom: 2rem;
+        }
+        
+        img {
+            width: 5rem;
+            display: block;
+            color: black;
+        }
+        
     </style>
 </head>
 <body>
+
 <div class="container">
     <h1>Snake</h1>
     <h3>by HTML 5 Canvas with JavaScript</h3>
     <canvas id="gc" width="400" height="400"></canvas>
     <p>press any direction key to start</p>
-    <p>press "Q" to stop the snake</p>
+    <a href="meiworks.cn" target="_self"><img src="../title-black.svg" alt="title-in-black"/></a>
+    
+<!--    <p>press "Q" to stop the snake</p>-->
+</div>
+<div class="back">
+
 </div>
 
 </body>
@@ -104,9 +119,9 @@
             case 40:
                 xv=0;yv=1;
                 break;
-            case 81:
-                xv=0;vy=0;
-                break;
+            // case 81:
+            //     xv=0;vy=0;
+            //     break;
         }
     }
 </script>
