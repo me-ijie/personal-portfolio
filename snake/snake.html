@@ -1,7 +1,11 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Snake</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    >
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Game: Snake</title>
     <style type="text/css">
         @import url("../reset.css");
         html {
@@ -29,7 +33,10 @@
         img {
             width: 5rem;
             display: block;
-            color: black;
+        }
+        
+        img:hover {
+            fill: var(--main-gold);
         }
         
     </style>
@@ -41,7 +48,7 @@
     <h3>by HTML 5 Canvas with JavaScript</h3>
     <canvas id="gc" width="400" height="400"></canvas>
     <p>press any direction key to start</p>
-    <a href="meiworks.cn" target="_self"><img src="../title-black.svg" alt="title-in-black"/></a>
+    <a href="https://www.meiworks.cn" target="_self"><img id="title" src="../title-black-new.svg" alt="title-in-black"/></a>
     
 <!--    <p>press "Q" to stop the snake</p>-->
 </div>
@@ -56,6 +63,8 @@
         ctx=canv.getContext("2d");
         document.addEventListener("keydown",keyPush);
         setInterval(game,1000/5);
+        // document.getElementById("title").css.hover()
+          // .getSVGDocument().getElementById("meijie").setAttribute("fill", "#AD974F");
     }
     px=py=10; // player position
     gs=tc=20; // grid size & tile count 每个格子20px，横竖分别20个格子
@@ -126,5 +135,17 @@
     }
 </script>
 </html>
+
+<!--$(document).ready(function(){-->
+<!--$("#demo1").hover(function(){-->
+<!--$("#demo1").css("top","20px");-->
+<!--$("#demo1").css("left","20px");-->
+
+<!--},function(){-->
+<!--$("#demo1").css("top","0px");-->
+<!--$("#demo1").css("left","0px");-->
+
+<!--});-->
+
 
 
