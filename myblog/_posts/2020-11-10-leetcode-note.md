@@ -134,12 +134,12 @@ const person = new Map([
 
 # 数组常用方法总结
 
-| 方法          | 改变原数组 | 返回值                     | 拼接数组                |      |
-| ------------- | ---------- | -------------------------- | ----------------------- | ---- |
-| Arr.splice()  | 改变       | 数组(被删除的元素)    +end | Arr.splice(1,0,...arr2) |      |
-| arr.slice()   | 不改变     | 数组(被删除的元素)不+end   |                         |      |
-| Arr.pop()     | 改变       | 被删除的元素               |                         |      |
-| Arr.push()    | 改变       | 新长度                     | Arr.push(...arr2)       |      |
-| Arr.concat()  | 不改变     | 新数组                     | Arr.concat(arr2)        |      |
-| Arr.shift()   | 改变       | 被删除的元素/undefined     |                         |      |
-| arr.unshift() | 改变       | 新长度                     | Arr.unshift(...arr2)    |      |
+| 方法          | 改变原数组 | 返回值                     | 拼接数组                      |
+| ------------- | ---------- | -------------------------- | --------------------------- |
+| Arr.splice()  | 改变       | 数组(被删除的元素)    +end | Arr.splice(1,0,...arr2)       |
+| arr.slice()   | 不改变     | 数组(被删除的元素)不+end   |                               |
+| Arr.pop()     | 改变       | 被删除的元素               |                               |
+| Arr.push()    | 改变       | 新长度                     | Arr.push(...arr2)             |
+| Arr.concat()  | 不改变     | 新数组                     | Arr.concat(arr2)              |
+| Arr.shift()   | 改变       | 被删除的元素/undefined     |                               |
+| arr.unshift() | 改变       | 新长度                     | Arr.unshift(...arr2)          |
