@@ -268,7 +268,6 @@ img {
     width: 75%;
     max-width: 700px;
     min-height: 400px;
-    height: 50vh;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -280,7 +279,8 @@ img {
 }
 
 .modal-content img {
-    margin: 0 auto;
+    margin: 1rem auto;
+    width: 30rem;
 }
 
 #closeModal {
