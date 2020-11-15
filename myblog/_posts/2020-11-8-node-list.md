@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "链表：创建、填充、转为数组"
+date:   2020-11-08 06:38:07 +0800
+tags: linked-list
+---
+
+
+创建新链表：
+
+
+```javascript
+const newList = {
+    val: -1,
+    next: null,
+};
+let tempList = newList;
+```
+
+
+双指针填充链表：
+
+```javascript
+let left = 1, right = arr.length-1
+    while(left <= right) {
+        head.next = arr[right] // 添加节点
+        right--
+        head = head.next // 移动节点指针
+
+        head.next = arr[left] // 添加下一节点
+        left++
+        head = head.next // 移动节点指针
+    }
+    head.next = null // 最后一个节点置空，避免出现环
+```
+
+链表转为数组:
+
+```javascript
+// 输入 head
+if(!head) return null;
+    let tempHead = head;
+    let arr = [];
+    while(tempHead){
+        arr.push(tempHead);
+        tempHead = tempHead.next;
+    }
+```
+
+
+

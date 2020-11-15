@@ -29,46 +29,6 @@ result = result * 10 + x % 10
 
 `(result | 0) === result ? result : 0` 做溢出判断，若溢出则返回 0
 
-# 链表
-
-链表转为数组:
-
-```javascript
-// 输入 head
-if(!head) return null;
-    let tempHead = head;
-    let arr = [];
-    while(tempHead){
-        arr.push(tempHead);
-        tempHead = tempHead.next;
-    }
-```
-
-双指针填充链表：
-
-```javascript
-let left = 1, right = arr.length-1
-    while(left <= right) {
-        head.next = arr[right] // 添加节点
-        right--
-        head = head.next // 移动节点指针
-
-        head.next = arr[left] // 添加下一节点
-        left++
-        head = head.next // 移动节点指针
-    }
-    head.next = null // 最后一个节点置空，避免出现环
-```
-
-创建新链表：
-
-```javascript
-const newList = {
-    val: -1,
-    next: null,
-    };
-    let tempList = newList;
-```
 
 遍历数组或字符串：
 
@@ -132,14 +92,3 @@ const person = new Map([
         }
 ```
 
-# 数组常用方法总结
-
-| 方法          | 改变原数组 | 返回值                     | 拼接数组                      |
-| ------------- | ---------- | -------------------------- | --------------------------- |
-| Arr.splice()  | 改变       | 数组(被删除的元素)    +end | Arr.splice(1,0,...arr2)       |
-| arr.slice()   | 不改变     | 数组(被删除的元素)不+end   |                               |
-| Arr.pop()     | 改变       | 被删除的元素               |                               |
-| Arr.push()    | 改变       | 新长度                     | Arr.push(...arr2)             |
-| Arr.concat()  | 不改变     | 新数组                     | Arr.concat(arr2)              |
-| Arr.shift()   | 改变       | 被删除的元素/undefined     |                               |
-| arr.unshift() | 改变       | 新长度                     | Arr.unshift(...arr2)          |
