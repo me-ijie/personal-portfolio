@@ -7,7 +7,12 @@ tags: hash-table, Map
 ---
 
 
-哈希表常用方法：
+哈希表常用方法：  
+
+ 
+   
+     
+     
 
 ```javascript
 for(let char of word) {
@@ -20,7 +25,7 @@ for(let char of word) {
 
 获取键所对应的值：`wordMap.get(key)`，返回`value`
 
-查询是否存在该键：`wordMap.has(key)`，返回布尔值
+查询是否存在该键：`wordMap.has(key)`，返回`布尔值`
 
 枚举创建哈希表：
 

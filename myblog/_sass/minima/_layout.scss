@@ -7,6 +7,7 @@
   min-height: $spacing-unit * 1.865;
   width: 50%;
   margin: 0 auto;
+  margin-bottom: 30px;
 
   // Positioning context for the mobile navigation icon
   position: relative;
@@ -28,10 +29,11 @@
 
   .logo {
     display: flex;
-    width: 100px;
+    width: 250px;
     height: 36px;
     align-items: center;
     float: left;
+    margin: 10px 0;
   }
 
 
@@ -123,7 +125,7 @@
   border-top: 1px solid $grey-color-light;
   //padding: $spacing-unit 0;
 }
- 
+
 .footer-heading {
   @include relative-font-size(1.125);
   //margin-bottom: $spacing-unit / 2;
@@ -155,32 +157,32 @@
   padding-left: $spacing-unit / 2;
 }
 
-.footer-col-1 {
-  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-  width:         calc(35% - (#{$spacing-unit} / 2));
-}
+//.footer-col-1 {
+//  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+//  width:         calc(35% - (#{$spacing-unit} / 2));
+//}
 
-.footer-col-2 {
-  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-  width:         calc(20% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-  width:         calc(45% - (#{$spacing-unit} / 2));
-}
+//.footer-col-2 {
+//  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+//  width:         calc(20% - (#{$spacing-unit} / 2));
+//}
+//
+//.footer-col-3 {
+//  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+//  width:         calc(45% - (#{$spacing-unit} / 2));
+//}
 
 @include media-query($on-laptop) {
-  .footer-col-1,
-  .footer-col-2 {
-    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-    width:         calc(50% - (#{$spacing-unit} / 2));
-  }
-
-  .footer-col-3 {
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
-  }
+//  .footer-col-1,
+//  .footer-col-2 {
+//    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+//    width:         calc(50% - (#{$spacing-unit} / 2));
+//  }
+//
+//  .footer-col-3 {
+//    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+//    width:         calc(100% - (#{$spacing-unit} / 2));
+//  }
 }
 
 @include media-query($on-palm) {
@@ -249,6 +251,7 @@
 
 .post-content {
   margin-bottom: $spacing-unit;
+  line-height: $base-line-height;
 
   h2 {
     @include relative-font-size(2);

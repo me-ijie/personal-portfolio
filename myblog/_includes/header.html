@@ -3,7 +3,10 @@
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="logo" rel="author" href="{{ "/" | relative_url }}"><img src="{{ '/assets/title-black.svg' | relative_url }}"/></a>
+    <a class="logo" rel="author" href="{{ "/" | relative_url }}"><img src="{{ '/assets/blog-title.svg' | relative_url }}"
+        onmouseover="this.src='{{ '/assets/blog-title-white.svg' | relative_url }}'"
+        onmouseout="this.src='{{ '/assets/blog-title.svg' | relative_url }}'"
+  /></a>
 
 <!--    {%- if page_paths -%}-->
       <nav class="site-nav">

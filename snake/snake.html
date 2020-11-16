@@ -16,6 +16,8 @@
         }
         body {
             overflow: hidden;
+            background-image: url("./bg-2.jpg");
+            color: var(--main-gold);
         }
         .container {
             width: 100%;
@@ -37,6 +39,7 @@
         
         img:hover {
             fill: var(--main-gold);
+            color: blue
         }
         
     </style>
@@ -48,7 +51,9 @@
     <h3>by HTML 5 Canvas with JavaScript</h3>
     <canvas id="gc" width="400" height="400"></canvas>
     <p>press any direction key to start</p>
-    <a href="https://www.meiworks.cn" target="_self"><img id="title" src="../assets/images/title-black.svg" alt="title-in-black"/></a>
+    <a href="https://www.meiworks.cn" target="_self"><img id="title" src="../assets/images/title-gold.svg" alt="title-in-black"
+    onmouseover="this.src='../assets/images/title.svg'" onmouseout="this.src='../assets/images/title-gold.svg'"
+    /></a>
     
 <!--    <p>press "Q" to stop the snake</p>-->
 </div>
@@ -63,8 +68,9 @@
         ctx=canv.getContext("2d");
         document.addEventListener("keydown",keyPush);
         setInterval(game,1000/5);
-        // document.getElementById("title").css.hover()
-          // .getSVGDocument().getElementById("meijie").setAttribute("fill", "#AD974F");
+        // document.getElementById("title").hover(function() {
+        //
+        // })
     }
     px=py=10; // player position
     gs=tc=20; // grid size & tile count 每个格子20px，横竖分别20个格子
@@ -89,7 +95,7 @@
             py= 0;
         }
         // 画出画布的形状位置和颜色
-        ctx.fillStyle="#555555";
+        ctx.fillStyle="skyblue";
         ctx.fillRect(0,0,canv.width,canv.height);
         // 绘制 蛇
         ctx.fillStyle="lime";
