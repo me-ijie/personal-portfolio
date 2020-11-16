@@ -10,7 +10,7 @@ body {
     line-height: 1.4;
     padding-bottom: constant(safe-area-inset-bottom);
     padding-bottom: env(safe-area-inset-bottom);
-    background-image: url("../images/bgIMG.JPG");
+    background-image: url("../images/123.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -106,7 +106,7 @@ img {
     height: 100vh;
     z-index: 20;
     color: var(--main-light);
-    background-image: url("../images/bgIMG.JPG");
+    background-image: url("../images/bgIMG.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
