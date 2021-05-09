@@ -1,0 +1,34 @@
+I"k<p>哈希表常用方法：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">char</span> <span class="k">of</span> <span class="nx">word</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">wordMap</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">char</span><span class="p">,</span> <span class="p">(</span><span class="nx">wordMap</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">char</span><span class="p">)</span> <span class="p">?</span> <span class="nx">wordMap</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">char</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">1</span><span class="p">));</span>
+  <span class="c1">// 存在char，则获取该char的值并加1，不存在则插入该char，并设置值为1</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>插入键值对：<code class="language-plaintext highlighter-rouge">wordMap.set(key, value)</code></p>
+
+<p>获取键所对应的值：<code class="language-plaintext highlighter-rouge">wordMap.get(key)</code>，返回<code class="language-plaintext highlighter-rouge">value</code></p>
+
+<p>查询是否存在该键：<code class="language-plaintext highlighter-rouge">wordMap.has(key)</code>，返回<code class="language-plaintext highlighter-rouge">布尔值</code></p>
+
+<p>枚举创建哈希表：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">([</span>
+        <span class="p">[</span><span class="dl">'</span><span class="s1">age</span><span class="dl">'</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+        <span class="p">[</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">],</span>
+        <span class="p">[</span><span class="dl">'</span><span class="s1">sex</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">male</span><span class="dl">'</span><span class="p">]</span>
+    <span class="p">]);</span>
+</code></pre></div></div>
+<p>迭代器遍历Map：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">w</span> <span class="k">of</span> <span class="nx">sChar</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 遍历的是键值对</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">w</span><span class="p">)</span> <span class="c1">// ["a",3]</span>
+    <span class="p">}</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="p">[</span><span class="nx">w</span><span class="p">,</span><span class="nx">b</span><span class="p">]</span> <span class="k">of</span> <span class="nx">sChar</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 设为数组则可单独取出"键"或"值"</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">tChar</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">w</span><span class="p">))</span> <span class="k">return</span> <span class="kc">false</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">tChar</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">w</span><span class="p">)</span> <span class="o">!==</span> <span class="nx">sChar</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">w</span><span class="p">))</span> <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+:ET

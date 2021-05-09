@@ -2,36 +2,34 @@
 layout: default
 ---
 
-<div class="home">
+{% assign date_format = site.date_format | default: "%B %-d, %Y" %}
 
-  <h1 class="page-heading">{{ site.tags }}</h1>
+{%- capture site_tags -%}
+{%- for tag in site.tags -%}
+{{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%}
+{%- endfor -%}
+{%- endcapture -%}
+{%- assign tags_list = site_tags | split:',' | sort -%}
 
-  
-  {{ content }}
-  
-  {%- if site.posts.size > 0 -%}
-  <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
-  <ul class="post-list">
-    {%- for post in site.posts -%}
-    <li>
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      
-      <h3>
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-        </a>
-      </h3>
-      <span class="post-meta">{{ post.date | date: date_format }} | </span>
+{%- for tag in tags_list -%}
+<a href="#{{- tag -}}" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})</a>
+{%- endfor -%}
 
-      
-      {%- if site.show_excerpts -%}
-      {{ post.excerpt }}
-      {%- endif -%}
-    </li>
+<div id="full-tags-list">
+  {%- for tag in tags_list -%}
+  <h2 id="{{- tag -}}" class="linked-section">
+    <i class="fas fa-tag" aria-hidden="true"></i>
+    &nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})
+  </h2>
+  <div class="post-list">
+    {%- for post in site.tags[tag] -%}
+    <div class="tag-entry">
+      <a href="{{ post.url | relative_url }}">{{- post.title -}}</a>
+      <div class="entry-date">
+        <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: date_format -}}</time>
+      </div>
+    </div>
     {%- endfor -%}
-  </ul>
-  
-  <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
-  {%- endif -%}
-
+  </div>
+  {%- endfor -%}
 </div>

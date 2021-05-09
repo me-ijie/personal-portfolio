@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    >
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="icon" type="image/x-ico" href="../assets/images/logo-rose.ico" />
+    
+    <title>Shop</title>
+    <style type="text/css">
+        @import url("../assets/css/reset.css");
+        html {
+            box-sizing: border-box;
+            font-size: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-image: url("./bg-2.jpg");
+            color: var(--main-gold);
+        }
+        
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            min-height: 700px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container h1,p {
+            padding-bottom: 2rem;
+        }
+        
+        .qr-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 50%;
+        }
+        
+        .qr-tile {
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        img {
+            width: 5rem;
+            display: block;
+            color: black;
+        }
+    
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Preview</h1>
+    <h1>Try It Yourself</h1>
+    <section class="qr-section">
+        <div class="qr-tile">
+            <img class="qrcode" alt="h5-code"/>
+            <p>Checkout the H5 App</p>
+        </div>
+        <div class="qr-tile">
+            <img class="qrcode" alt="wx-code"/>
+            <p>Checkout the Mini Program</p>
+        </div>
+    </section>
+    <a href="https://www.meiworks.cn" target="_self"><img id="title" src="../assets/images/title-gold.svg" alt="title-in-black"
+      onmouseover="this.src='../assets/images/title.svg'" onmouseout="this.src='../assets/images/title-gold.svg'"
+    /></a>
+</div>
+<div class="back">
+
+</div>
+
+</body>
+<script>
+    window.onload=function() {
+        canv=document.getElementById("gc");
+        ctx=canv.getContext("2d");
+        document.addEventListener("keydown",keyPush);
+        setInterval(game,1000/5);
+    }
+    px=py=10; // player position
+    gs=tc=20; // grid size & tile count 每个格子20px，横竖分别20个格子
+    ax=ay=15; // apple position
+    xv=yv=0; // velocity
+    trail=[]; // 蛇的身体路径
+    tail = 5; // 蛇的 尾巴
+    function game() {
+        px+=xv;
+        py+=yv;
+        // 蛇可以穿过四周墙壁，出现在另一侧
+        if(px<0) {
+            px= tc-1;
+        }
+        if(px>tc-1) {
+            px= 0;
+        }
+        if(py<0) {
+            py= tc-1;
+        }
+        if(py>tc-1) {
+            py= 0;
+        }
+        // 画出画布的形状位置和颜色
+        ctx.fillStyle="#555555";
+        ctx.fillRect(0,0,canv.width,canv.height);
+        // 绘制 蛇
+        ctx.fillStyle="lime";
+        for(var i=0;i<trail.length;i++) {
+            ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
+            if(trail[i].x==px && trail[i].y==py) {  // 蛇碰到自己，长度变回5
+                tail = 5;
+            }
+        }
+        trail.push({x:px,y:py});
+        while(trail.length>tail) {
+            trail.shift();
+        }
+        
+        if(ax==px && ay==py) { // 蛇吃到苹果
+            tail++; // 尾巴变长
+            ax=Math.floor(Math.random()*tc); // 随机改变苹果的的位置
+            ay=Math.floor(Math.random()*tc);
+        }
+        
+        ctx.fillStyle="red";
+        ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
+    }
+    // 按下按键，为某个方向添加速度使蛇移动
+    function keyPush(evt) {
+        switch(evt.keyCode) {
+            case 37:
+                xv=-1;yv=0;
+                break;
+            case 38:
+                xv=0;yv=-1;
+                break;
+            case 39:
+                xv=1;yv=0;
+                break;
+            case 40:
+                xv=0;yv=1;
+                break;
+          // case 81:
+          //     xv=0;vy=0;
+          //     break;
+        }
+    }
+</script>
+</html>
+
+

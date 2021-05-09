@@ -1,15 +1,14 @@
 ---
 layout: post
-title:  "回溯算法（backtracking algorithm）
+title:  "回溯算法（backtracking algorithm）"
 date:   2020-11-12 06:38:07 +0800
 tags: algorithm backtracking
 ---
 
-# 回溯算法
 
 涉及题号：
 
-127. 单词接龙
+127 -  [单词接龙] [单词接龙]
 
 在解题时， 可能含有多条解题途径，涉及多条分支；而需要尝试每一条路径后，才找到最优解。
 根据判断条件，进入某一条支线后，发现无法继续前进或走到尽头后，需返回上一层/若干层尝试另一条支线。
@@ -36,4 +35,4 @@ tags: algorithm backtracking
 
 
 
-
+[单词接龙]: https://leetcode-cn.com/problems/word-ladder/

@@ -3,16 +3,12 @@ layout: post
 title:  "哈希表：Map in JavaScript"
 date:   2020-11-07 06:38:07 +0800
 categories: jekyll update
-tags: hash-table, Map
+tags: hash-table Map
 ---
 
 
 哈希表常用方法：  
 
- 
-   
-     
-     
 
 ```javascript
 for(let char of word) {
@@ -36,4 +32,15 @@ const person = new Map([
         ['sex', 'male']
     ]);
 ```
+迭代器遍历Map：
 
+```javascript
+for(let w of sChar) { // 遍历的是键值对
+    console.log(w) // ["a",3]
+    }
+
+for(let [w,b] of sChar) { // 设为数组则可单独取出"键"或"值"
+    if(!tChar.has(w)) return false
+    if(tChar.get(w) !== sChar.get(w)) return false
+    }
+```
